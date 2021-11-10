@@ -4,24 +4,31 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import tw from "tailwind-styled-components";
 import mapboxgl from "mapbox-gl";
-
-mapboxgl.accessToken =
-	"pk.eyJ1IjoiY2hlYml2YSIsImEiOiJja3ZyMnEzMHpleHF3MnBtbno0MHNsdDl2In0.vzEwPIN2jsiEj-01wsQvbg";
+import Map from "../components/Map";
 
 export default function Home() {
-	useEffect(() => {
-		const map = new mapboxgl.Map({
-			container: "map",
-			style: "mapbox://styles/chebiva/ckvtpm78r21wa14s83hwlgy59",
-			center: [30.5234, 50.4501], //starting coordinates kiev.ua
-			zoom: 7,
-		});
-	}, []);
-
 	return (
 		<Wrapper>
-			<Map id="map">Map</Map>
-			<ActionItems>Start</ActionItems>
+			<Map />
+			<ActionItems>
+				<Header>
+					<Logo src="https://i.imgur.com/kenBFj5.jpeg" alt="lgoo" />
+					<Profile>
+						<UserImage
+							src="https://i.imgur.com/cuGo4lU.jpeg"
+							alt="user-image"
+						/>
+						<UserName>Ivan777</UserName>
+					</Profile>
+				</Header>
+
+				<ActionButtons>
+					<ActionButton>Ride</ActionButton>
+					<ActionButton>Bike</ActionButton>
+					<ActionButton>Reserve</ActionButton>
+				</ActionButtons>
+				<InputSearch>Whereto</InputSearch>
+			</ActionItems>
 		</Wrapper>
 	);
 }
@@ -31,6 +38,25 @@ const Wrapper = tw.div`
 
 
 `;
-const Map = tw.div`
-bg-red-500 flex-1`;
+
 const ActionItems = tw.div`flex-1`;
+const Header = tw.div`
+flex items-center justify-between mt-8
+
+`;
+const ActionButtons = tw.div``;
+const ActionButton = tw.div``;
+const InputSearch = tw.div``;
+const Logo = tw.img` w-20
+`;
+const Profile = tw.div`flex flex-col items-center mr-8 justify-center text-center`;
+const UserName = tw.div`
+	mr-4 w-20 text-small
+
+`;
+const UserImage = tw.img`
+h-24
+w-24 rounded-full
+object-cover
+border-gray-200 p-px
+`;
