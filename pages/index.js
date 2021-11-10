@@ -23,9 +23,18 @@ export default function Home() {
 				</Header>
 
 				<ActionButtons>
-					<ActionButton>Ride</ActionButton>
-					<ActionButton>Bike</ActionButton>
-					<ActionButton>Reserve</ActionButton>
+					<ActionButton>
+						<AcBuImage src="https://i.ibb.co/cyvcpfF/uberx.png" />
+						Ride
+					</ActionButton>
+					<ActionButton>
+						<AcBuImage src="https://i.ibb.co/n776JLm/bike.png" />
+						Bike
+					</ActionButton>
+					<ActionButton>
+						<AcBuImage src="https://i.ibb.co/5RjchBg/uberschedule.png" />
+						Reserve
+					</ActionButton>
 				</ActionButtons>
 				<InputSearch>Whereto</InputSearch>
 			</ActionItems>
@@ -44,14 +53,20 @@ const Header = tw.div`
 flex items-center justify-between mt-8
 
 `;
-const ActionButtons = tw.div``;
-const ActionButton = tw.div``;
-const InputSearch = tw.div``;
-const Logo = tw.img` w-20
+//buttons container
+const ActionButtons = tw.div`flex`;
+//individual button
+const ActionButton = tw.div`bg-gray-200 flex-1 m-1 h-32 flex items-center flex-col justify-center`;
+//action button image
+const AcBuImage = tw.img`;
+h-3/5
 `;
-const Profile = tw.div`flex flex-col items-center mr-8 justify-center text-center`;
+const InputSearch = tw.div``;
+const Logo = tw.img` w-40 ml-4
+`;
+const Profile = tw.div`flex items-center flex-col justify-center text-center mr-4`;
 const UserName = tw.div`
-	mr-4 w-20 text-small
+	w-20 text-small
 
 `;
 const UserImage = tw.img`
