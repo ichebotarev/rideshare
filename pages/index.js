@@ -12,8 +12,8 @@ export default function Home() {
 	useEffect(() => {
 		const map = new mapboxgl.Map({
 			container: "map",
-			style: "mapbox://styles/mapbox/streets-v11",
-			center: [30.5234, 50.4501],
+			style: "mapbox://styles/chebiva/ckvtpm78r21wa14s83hwlgy59",
+			center: [30.5234, 50.4501], //starting coordinates kiev.ua
 			zoom: 7,
 		});
 	}, []);
