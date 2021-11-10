@@ -36,7 +36,7 @@ export default function Home() {
 						Reserve
 					</ActionButton>
 				</ActionButtons>
-				<InputSearch>Whereto</InputSearch>
+				<InputSearch>Where to?</InputSearch>
 			</ActionItems>
 		</Wrapper>
 	);
@@ -56,12 +56,12 @@ flex items-center justify-between mt-8
 //buttons container
 const ActionButtons = tw.div`flex`;
 //individual button
-const ActionButton = tw.div`bg-gray-200 flex-1 m-1 h-32 flex items-center flex-col justify-center`;
+const ActionButton = tw.div`outline-blue flex-1 m-4 h-32 flex items-center flex-col justify-center rounded-lg transform hover:scale-105 transition`;
 //action button image
 const AcBuImage = tw.img`;
 h-3/5
 `;
-const InputSearch = tw.div``;
+
 const Logo = tw.img` w-40 ml-4
 `;
 const Profile = tw.div`flex items-center flex-col justify-center text-center mr-4`;
@@ -70,8 +70,11 @@ const UserName = tw.div`
 
 `;
 const UserImage = tw.img`
-h-24
-w-24 rounded-full
+h-16
+w-16 rounded-full
 object-cover
 border-gray-200 p-px
 `;
+
+const InputSearch = tw.div`
+h-20 outline-blue text-2xl p-4 flex items-center mt-8`;
